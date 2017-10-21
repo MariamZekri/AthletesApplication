@@ -22,6 +22,7 @@
 		54396D581F99426700433EC2 /* TcAthletes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54396D561F99426700433EC2 /* TcAthletes.xib */; };
 		54396D5B1F994B0300433EC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54396D591F994B0300433EC2 /* Constants.swift */; };
 		54396D5C1F994B0300433EC2 /* Uitilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54396D5A1F994B0300433EC2 /* Uitilities.swift */; };
+		548946211F9B95530031B3B7 /* AthletesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548946201F9B95530031B3B7 /* AthletesDetailsViewController.swift */; };
 		54A171961F994F5200B84ADF /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A171941F994F5200B84ADF /* Athlete.swift */; };
 		54A171971F994F5200B84ADF /* ModAthletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A171951F994F5200B84ADF /* ModAthletes.swift */; };
 		54A171991F99504100B84ADF /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A171981F99504100B84ADF /* NetworkHelper.swift */; };
@@ -69,6 +70,7 @@
 		54396D561F99426700433EC2 /* TcAthletes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TcAthletes.xib; sourceTree = "<group>"; };
 		54396D591F994B0300433EC2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		54396D5A1F994B0300433EC2 /* Uitilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uitilities.swift; sourceTree = "<group>"; };
+		548946201F9B95530031B3B7 /* AthletesDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthletesDetailsViewController.swift; sourceTree = "<group>"; };
 		54A171941F994F5200B84ADF /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
 		54A171951F994F5200B84ADF /* ModAthletes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModAthletes.swift; sourceTree = "<group>"; };
 		54A171981F99504100B84ADF /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		54396D181F99411200433EC2 = {
 			isa = PBXGroup;
 			children = (
+				5489461D1F9B93FA0031B3B7 /* AthletesDetails */,
 				541507AE1F9B4281001965D7 /* Athletes */,
 				54396D541F99423200433EC2 /* Models */,
 				54396D531F9941F800433EC2 /* SupportClasses */,
@@ -219,6 +222,15 @@
 			);
 			name = Models;
 			path = Athletes/Models;
+			sourceTree = "<group>";
+		};
+		5489461D1F9B93FA0031B3B7 /* AthletesDetails */ = {
+			isa = PBXGroup;
+			children = (
+				548946201F9B95530031B3B7 /* AthletesDetailsViewController.swift */,
+			);
+			name = AthletesDetails;
+			path = Athletes/AthletesDetails;
 			sourceTree = "<group>";
 		};
 		78F5D3FAA0BD14FAB0875FF9 /* Pods */ = {
@@ -551,6 +563,7 @@
 				541507B81F9B5435001965D7 /* Extensions.swift in Sources */,
 				54396D251F99411200433EC2 /* AppDelegate.swift in Sources */,
 				54396D571F99426700433EC2 /* TcAthletes.swift in Sources */,
+				548946211F9B95530031B3B7 /* AthletesDetailsViewController.swift in Sources */,
 				54396D5B1F994B0300433EC2 /* Constants.swift in Sources */,
 				54396D5C1F994B0300433EC2 /* Uitilities.swift in Sources */,
 			);

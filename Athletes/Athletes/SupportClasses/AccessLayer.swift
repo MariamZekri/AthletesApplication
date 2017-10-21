@@ -17,30 +17,34 @@ class AccessLayer {
     //#MARK:- GetAthletesList
     internal static func apiAthletesList(parameters: [String : Any],sucess: @escaping ((_ atheletesInfo: ModAthletes ) -> Void), failure:@escaping (( _ NSError: String?) -> Void), noInternet:@escaping ((_ atheletesCachedInfo: ModAthletes?) -> Void))
     {
-        
-        NetworkHelper.networkRequester(domainUrl: nil, service: Constants.getAthletesUrl, contentType: nil, hTTPMethod: .get, parameters: parameters, callbackNoInterent: {
-
+        NetworkHelper.networkRequester(domainUrl: Constants.domainUrl, service: Constants.getAthletesUrl, contentType: nil, hTTPMethod: .get, parameters: parameters, httpBody: nil, httpBodyData: nil, responseType: .StringJson, callbackNoInterent: {
             
-        }) { (json, error) in
+        }, callbackString: { (response) in
             
-            if json != JSON.null {
+            if(response.result.isFailure)
+            {
                 
-                let res = ModAthletes(JSON: json.dictionaryObject!)
+                print(response.result.error?.localizedDescription as Any);
+                failure(response.result.error?.localizedDescription)
                 
-                print("Result \(String(describing: res))")
-                
-                sucess(res!)
-                
-            }else {
-                
-                if let err = error?.localizedDescription {
-                    failure(err)
-                }else {
-                    failure("fail")
+            }
+            
+            if(response.result.isSuccess)
+            {
+                if let JSON = response.result.value
+                {
+                    print("JSON: \(JSON)")
+                    
+                    let res = ModAthletes(JSONString: JSON) //success
+                    
+                    sucess(res!)
+                    
                 }
             }
             
-        }
+            
+        }, callbackSwiftyDic: nil)
+
     }
     
     

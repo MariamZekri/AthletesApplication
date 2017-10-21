@@ -27,6 +27,7 @@ class AthletesViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.title = "Athlete"
         
         athletesPresenter.attachView(view: self)
         athletesPresenter.getAthletesData(infiniteRefresher: false, displayIndicator: true)
@@ -43,7 +44,8 @@ class AthletesViewController: UIViewController {
         
         // Automatic Height for tableView
         athletesTableView.rowHeight = UITableViewAutomaticDimension
-        athletesTableView.estimatedRowHeight = 88
+        athletesTableView.estimatedRowHeight = 80
+        
         
         // Add refresher to table view
         refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -76,6 +78,24 @@ class AthletesViewController: UIViewController {
         athletesPresenter.getAthletesData(infiniteRefresher: false, displayIndicator: false)
     }
     
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsToAthletes" {
+            
+            let athletesDetailsController:AthletesDetailsViewController = segue.destination as! AthletesDetailsViewController
+            
+            if let selectedRowIndexPath = athletesTableView.indexPathForSelectedRow {
+                
+                athletesDetailsController.athletesData = athletesArr[selectedRowIndexPath.row]
+                
+            }
+            
+            
+        }
+
+    }
+    
 }
 
 
@@ -99,14 +119,14 @@ extension AthletesViewController: UITableViewDelegate, UITableViewDataSource {
         let data = athletesArr[indexPath.row]
         
         cell.athletesName.text = data.name
-        cell.athletesImg.kf.setImage(with: URL(string: data.image!))
+        cell.athletesImg.kf.setImage(with: URL(string: data.image!), placeholder: UIImage(named:"Image"), options: nil, progressBlock: nil, completionHandler: nil)
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.performSegue(withIdentifier: "followerToTimline", sender: self)
+        self.performSegue(withIdentifier: "detailsToAthletes", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -126,34 +146,36 @@ extension AthletesViewController:AthletesView {
     func finishLoading() {
         
         refresher.endRefreshing()
-        //followersTable.finishInfiniteScroll()
+        athletesTableView.finishInfiniteScroll()
         self.activityProgress?.stopAnimating()
     }
     
     func sentSuccess(athletesData: ModAthletes, append: Bool) {
         
         if append {
+            
             athletesDataList = athletesData
-           // athletesDataList.append(contentsOf: athletesData.users!)
+            athletesArr.append(contentsOf: athletesData.athletes!)
             
         }else {
             athletesDataList = athletesData
-            //athletesDataList = athletesData.users!
+            athletesArr = athletesData.athletes!
         }
         
-       // followersTable.reloadData()
+        athletesTableView.reloadData()
         
     }
     
     func sentFailed(error: Error?) {
-        //        if error == "fail" {
-        //
-        //            self.alert(title: Language.localizeStringForKey(word: "error"), message: Language.localizeStringForKey(word: "something_went_wrong"), viewController: self)
-        //        }else {
-        //
-        //            self.alert(title: Language.localizeStringForKey(word: "error"), message: error, viewController: self)
-        //
-        //        }
+        
+//                if error == "fail" {
+//        
+//                    self.alert(title: Language.localizeStringForKey(word: "error"), message: Language.localizeStringForKey(word: "something_went_wrong"), viewController: self)
+//                }else {
+//        
+//                    self.alert(title: Language.localizeStringForKey(word: "error"), message: error, viewController: self)
+//        
+//                }
     }
 
     

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f35-Wh-90M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AH3-xN-Ron">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AH3-xN-Ron">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gaX-fL-PBp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KUE-X8-bCl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,11 +39,94 @@
                             <constraint firstItem="AH3-xN-Ron" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xbz-Od-EW5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cww-p0-6g0"/>
                     <connections>
                         <outlet property="athletesTableView" destination="AH3-xN-Ron" id="RKy-0h-5yg"/>
+                        <segue destination="4FG-1E-hT3" kind="show" identifier="detailsToAthletes" id="7ew-op-0VA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Athletes Details View Controller-->
+        <scene sceneID="97p-zM-P1h">
+            <objects>
+                <viewController storyboardIdentifier="AthletesDetailsViewController" id="4FG-1E-hT3" customClass="AthletesDetailsViewController" customModule="Athletes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gXE-l7-LdI"/>
+                        <viewControllerLayoutGuide type="bottom" id="jqB-Wh-PEy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oQG-QJ-OSn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="phz-u4-nWz">
+                                <rect key="frame" x="9" y="72" width="121" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="R0A-B2-XAC"/>
+                                    <constraint firstAttribute="width" constant="121" id="gN2-js-7LY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hk-IO-orZ">
+                                <rect key="frame" x="138" y="138" width="229" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cCS-XE-2ev"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w7t-rd-Z8n">
+                                <rect key="frame" x="9" y="233" width="350" height="246"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="GoL-DM-TWF"/>
+                                    <constraint firstAttribute="width" constant="350" id="eOe-s7-GMw"/>
+                                </constraints>
+                                <mutableString key="text">Pele is a legendary sporting figure and an iconic soccer player who during his active years ruled the game to the point of being called the ‘King of Football’. Till date, he is widely regarded by football fans, critics, experts and players (current and retired) as the best player of all time. With his impeccable style, electrifying play and impressive performance, he scored a total of 1281 goals in 1363 games. It was his deep embedded penchant for the game and knack for scoring spectacular goals that made him a star around the world. He was praised for his exceptional heading ability, powerful shot and unbowed goal scoring. A Brazilian national team footballer and key player for the Santos club, he played a major role in every game he played. While at field, he gave his hundred per cent to every match and played like an unbeaten pro since his very first professional game. Over his career that spanned for a little over two decades, he showcased some invincible performances and catapulted the popularity of the game astronomically. Other than his spectacular showmanship on the field, Pele is regarded as the ultimate humanitarian as well, for he has raised his voice to enhance the living standard and social conditions of the poor, a number of times. In his active years, he created numerous records, some of which till date remain undefeated and unaltered.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5hk-IO-orZ" firstAttribute="centerY" secondItem="phz-u4-nWz" secondAttribute="centerY" id="Akd-cv-Ko7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5hk-IO-orZ" secondAttribute="trailing" constant="-8" id="FK3-v8-kMA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w7t-rd-Z8n" secondAttribute="trailing" id="HnI-kQ-tMs"/>
+                            <constraint firstItem="phz-u4-nWz" firstAttribute="top" secondItem="gXE-l7-LdI" secondAttribute="bottom" constant="8" id="Y9V-dB-sT3"/>
+                            <constraint firstItem="5hk-IO-orZ" firstAttribute="leading" secondItem="phz-u4-nWz" secondAttribute="trailing" constant="8" id="bep-rX-Ix8"/>
+                            <constraint firstItem="phz-u4-nWz" firstAttribute="leading" secondItem="oQG-QJ-OSn" secondAttribute="leadingMargin" constant="-7" id="gid-Pn-j4t"/>
+                            <constraint firstItem="w7t-rd-Z8n" firstAttribute="top" secondItem="phz-u4-nWz" secondAttribute="bottom" constant="8" id="hJm-uA-ARx"/>
+                            <constraint firstItem="w7t-rd-Z8n" firstAttribute="leading" secondItem="oQG-QJ-OSn" secondAttribute="leadingMargin" constant="-7" id="wh4-LR-0Ou"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="R22-xy-juA"/>
+                    <connections>
+                        <outlet property="athleteBreif" destination="w7t-rd-Z8n" id="b1F-mJ-1Y2"/>
+                        <outlet property="athleteImg" destination="phz-u4-nWz" id="5Z1-4p-Syb"/>
+                        <outlet property="athleteName" destination="5hk-IO-orZ" id="HVo-mZ-91B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njn-dJ-7HY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.8" y="136.28185907046478"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pVH-sc-pvb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f35-Wh-90M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1wD-BY-oCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dig-BZ-0ow"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OU-VK-Ogi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>

@@ -11,7 +11,7 @@ import UIKit
 class Constants: NSObject {
 
     //MARK: Api Urls
-    
-    internal static let domainUrl = "https://gist.githubusercontent.com/Bassem-Samy/"
-    internal static let getAthletesUrl = "f227855df4d197d3737c304e9377c4d4/raw/ece2a30b16a77ee58091886bf6d3445946e10a23/athletes.josn"
+        
+    internal static let domainUrl = "https://gist.githubusercontent.com"
+    internal static let getAthletesUrl = "/Bassem-Samy/f227855df4d197d3737c304e9377c4d4/raw/ece2a30b16a77ee58091886bf6d3445946e10a23/athletes.josn"
 }

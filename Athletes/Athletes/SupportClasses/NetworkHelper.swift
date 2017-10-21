@@ -42,6 +42,7 @@ class NetworkHelper
         callbackSwiftyDic: ((_ JSON: JSON, _ Error: Error?) -> Void)? = nil)
     {
 
+        //mariam
 
         let UrlString = domainUrl! + service;
         var request = URLRequest(url: URL(string: UrlString)!)
