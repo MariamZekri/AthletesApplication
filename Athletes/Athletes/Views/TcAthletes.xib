@@ -58,12 +58,14 @@
                 <constraints>
                     <constraint firstItem="BoS-aK-oxy" firstAttribute="top" secondItem="SiF-GN-WqC" secondAttribute="bottom" constant="1.5" id="7kE-MA-bc3"/>
                     <constraint firstItem="SiF-GN-WqC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KTs-HN-bCL"/>
+                    <constraint firstItem="LwY-Un-WTZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="P79-ZC-idB"/>
                     <constraint firstItem="BoS-aK-oxy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="65" id="WA6-A1-Gj3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="SiF-GN-WqC" secondAttribute="trailing" id="Wfu-Xq-BjF"/>
                     <constraint firstItem="LwY-Un-WTZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Y2C-6e-VRu"/>
                     <constraint firstItem="LwY-Un-WTZ" firstAttribute="centerY" secondItem="SiF-GN-WqC" secondAttribute="centerY" id="gPo-vl-hyf"/>
                     <constraint firstItem="SiF-GN-WqC" firstAttribute="leading" secondItem="LwY-Un-WTZ" secondAttribute="trailing" constant="8" symbolic="YES" id="gn3-ei-Sei"/>
                     <constraint firstAttribute="trailingMargin" secondItem="BoS-aK-oxy" secondAttribute="trailing" id="n79-hT-Jyj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="LwY-Un-WTZ" secondAttribute="bottom" constant="2" id="tv0-MK-lHR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

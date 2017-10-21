@@ -51,17 +51,6 @@ class AthletesViewController: UIViewController {
         refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
         athletesTableView.addSubview(refresher)
         
-        // Add infinite scroll to table view
-        athletesTableView.addInfiniteScroll { (UITableView) in
-            
-            if self.athletesDataList != nil {
-                self.athletesPresenter.getAthletesData(infiniteRefresher: true, displayIndicator: false)
-                
-            }else {
-                self.athletesTableView.finishInfiniteScroll()
-                
-            }
-        }
         
     }
 
@@ -146,23 +135,16 @@ extension AthletesViewController:AthletesView {
     func finishLoading() {
         
         refresher.endRefreshing()
-        athletesTableView.finishInfiniteScroll()
+       // athletesTableView.finishInfiniteScroll()
         self.activityProgress?.stopAnimating()
     }
     
     func sentSuccess(athletesData: ModAthletes, append: Bool) {
         
-        if append {
-            
-            athletesDataList = athletesData
-            athletesArr.append(contentsOf: athletesData.athletes!)
-            
-        }else {
+     
             athletesDataList = athletesData
             athletesArr = athletesData.athletes!
-        }
-        
-        athletesTableView.reloadData()
+            athletesTableView.reloadData()
         
     }
     
