@@ -44,6 +44,10 @@
                     <constraint firstItem="4uQ-JF-RM8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dOV-Yc-hX2"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="athletesImg" destination="4uQ-JF-RM8" id="gm6-an-68E"/>
+                <outlet property="athletesName" destination="SiF-GN-WqC" id="PjB-ST-APi"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

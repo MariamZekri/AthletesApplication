@@ -10,6 +10,9 @@ target 'Athletes' do
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
   pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'UIScrollView-InfiniteScroll'
+  pod 'NVActivityIndicatorView'
 
 
   target 'AthletesTests' do

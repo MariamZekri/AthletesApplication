@@ -9,7 +9,10 @@
 import UIKit
 
 class TcAthletes: UITableViewCell {
-
+    
+    @IBOutlet weak var athletesImg: UIImageView!
+    @IBOutlet weak var athletesName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

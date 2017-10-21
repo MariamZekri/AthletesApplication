@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4BC3C650C27F04D198DB52B7 /* Pods_Athletes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92F4042B50A30648236696F /* Pods_Athletes.framework */; };
+		541507B01F9B42D4001965D7 /* AthletesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541507AF1F9B42D4001965D7 /* AthletesViewController.swift */; };
+		541507B21F9B43AC001965D7 /* AthletesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541507B11F9B43AC001965D7 /* AthletesPresenter.swift */; };
+		541507B41F9B43BA001965D7 /* AthletesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541507B31F9B43BA001965D7 /* AthletesView.swift */; };
+		541507B81F9B5435001965D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541507B71F9B5435001965D7 /* Extensions.swift */; };
 		54396D251F99411200433EC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54396D241F99411200433EC2 /* AppDelegate.swift */; };
-		54396D271F99411200433EC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54396D261F99411200433EC2 /* ViewController.swift */; };
 		54396D2A1F99411200433EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54396D281F99411200433EC2 /* Main.storyboard */; };
 		54396D2C1F99411200433EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54396D2B1F99411200433EC2 /* Assets.xcassets */; };
 		54396D2F1F99411200433EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54396D2D1F99411200433EC2 /* LaunchScreen.storyboard */; };
@@ -46,9 +49,12 @@
 
 /* Begin PBXFileReference section */
 		33250869FFA0972968361F6A /* Pods-AthletesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AthletesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AthletesTests/Pods-AthletesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		541507AF1F9B42D4001965D7 /* AthletesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthletesViewController.swift; sourceTree = "<group>"; };
+		541507B11F9B43AC001965D7 /* AthletesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthletesPresenter.swift; sourceTree = "<group>"; };
+		541507B31F9B43BA001965D7 /* AthletesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthletesView.swift; sourceTree = "<group>"; };
+		541507B71F9B5435001965D7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		54396D211F99411200433EC2 /* Athletes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Athletes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54396D241F99411200433EC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54396D261F99411200433EC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		54396D291F99411200433EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54396D2B1F99411200433EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54396D2E1F99411200433EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,9 +121,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		541507AE1F9B4281001965D7 /* Athletes */ = {
+			isa = PBXGroup;
+			children = (
+				541507AF1F9B42D4001965D7 /* AthletesViewController.swift */,
+				541507B11F9B43AC001965D7 /* AthletesPresenter.swift */,
+				541507B31F9B43BA001965D7 /* AthletesView.swift */,
+			);
+			name = Athletes;
+			path = Athletes/Athletes;
+			sourceTree = "<group>";
+		};
 		54396D181F99411200433EC2 = {
 			isa = PBXGroup;
 			children = (
+				541507AE1F9B4281001965D7 /* Athletes */,
 				54396D541F99423200433EC2 /* Models */,
 				54396D531F9941F800433EC2 /* SupportClasses */,
 				54396D521F9941E500433EC2 /* Views */,
@@ -144,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				54396D241F99411200433EC2 /* AppDelegate.swift */,
-				54396D261F99411200433EC2 /* ViewController.swift */,
 				54396D281F99411200433EC2 /* Main.storyboard */,
 				54396D2B1F99411200433EC2 /* Assets.xcassets */,
 				54396D2D1F99411200433EC2 /* LaunchScreen.storyboard */,
@@ -184,6 +201,7 @@
 		54396D531F9941F800433EC2 /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
+				541507B71F9B5435001965D7 /* Extensions.swift */,
 				54A1719A1F99505000B84ADF /* AccessLayer.swift */,
 				54A171981F99504100B84ADF /* NetworkHelper.swift */,
 				54396D591F994B0300433EC2 /* Constants.swift */,
@@ -448,14 +466,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Athletes/Pods-Athletes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -517,11 +541,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541507B41F9B43BA001965D7 /* AthletesView.swift in Sources */,
+				541507B01F9B42D4001965D7 /* AthletesViewController.swift in Sources */,
 				54A171991F99504100B84ADF /* NetworkHelper.swift in Sources */,
+				541507B21F9B43AC001965D7 /* AthletesPresenter.swift in Sources */,
 				54A171971F994F5200B84ADF /* ModAthletes.swift in Sources */,
 				54A1719B1F99505000B84ADF /* AccessLayer.swift in Sources */,
-				54396D271F99411200433EC2 /* ViewController.swift in Sources */,
 				54A171961F994F5200B84ADF /* Athlete.swift in Sources */,
+				541507B81F9B5435001965D7 /* Extensions.swift in Sources */,
 				54396D251F99411200433EC2 /* AppDelegate.swift in Sources */,
 				54396D571F99426700433EC2 /* TcAthletes.swift in Sources */,
 				54396D5B1F994B0300433EC2 /* Constants.swift in Sources */,

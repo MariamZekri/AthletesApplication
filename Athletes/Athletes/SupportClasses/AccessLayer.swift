@@ -19,8 +19,7 @@ class AccessLayer {
     {
         
         NetworkHelper.networkRequester(domainUrl: nil, service: Constants.getAthletesUrl, contentType: nil, hTTPMethod: .get, parameters: parameters, callbackNoInterent: {
-            
-            //noInternet("")
+
             
         }) { (json, error) in
             

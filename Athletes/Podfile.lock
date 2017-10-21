@@ -1,18 +1,29 @@
 PODS:
   - Alamofire (4.5.1)
+  - Kingfisher (3.13.0)
+  - NVActivityIndicatorView (3.7.0):
+    - NVActivityIndicatorView/Presenter (= 3.7.0)
+  - NVActivityIndicatorView/Presenter (3.7.0)
   - ObjectMapper (2.2.8)
   - SwiftyJSON (3.1.4)
+  - UIScrollView-InfiniteScroll (1.0.2)
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher
+  - NVActivityIndicatorView
   - ObjectMapper
   - SwiftyJSON
+  - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Kingfisher: 7eebf6000ac64401839f10da37f21eefa7d88970
+  NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: 549e46637490e05c515d2cbd03adfdab7c294b84
+PODFILE CHECKSUM: c93255fb24a02476a30b71a529ebb94591eb33cf
 
 COCOAPODS: 1.3.1
